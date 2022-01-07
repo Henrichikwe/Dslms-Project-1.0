@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
-
+beforeEach(() =>{
+})
 it('Dslms', function(){
     cy.visit ('http://havard.deltalms.prunedge.org/')
     cy.get(':nth-child(1) > .MuiInputBase-root > .MuiInputBase-input').type('havardhs@mailinator.com')
@@ -8,8 +9,8 @@ it('Dslms', function(){
     cy.contains('Courses').click()
     cy.get('.jss123 > .MuiButtonBase-root > .MuiButton-label').click()
     cy.get('.MuiGrid-grid-lg-4 > .MuiBox-root > .MuiButtonBase-root > .MuiButton-label').click()
-    cy.get('.MuiGrid-container > :nth-child(1) > .MuiFormControl-root > .MuiInputBase-root > .MuiInputBase-input').type('philosophy')
-    cy.get(':nth-child(2) > .MuiFormControl-root > .MuiInputBase-root > .MuiInputBase-input').type('PHY-109')
+    cy.get('.MuiGrid-container > :nth-child(1) > .MuiFormControl-root > .MuiInputBase-root > .MuiInputBase-input').type('Sociology')
+    cy.get(':nth-child(2) > .MuiFormControl-root > .MuiInputBase-root > .MuiInputBase-input').type('SOCIO-109')
     cy.get(':nth-child(3) > .MuiFormControl-root > .MuiInputBase-root > .MuiInputBase-input').type('3')
     cy.get('#mui-component-select-faculty').click()
     cy.get('[data-value="206c5a83-2378-4359-94a7-2bada8dfda10"]').click()
