@@ -2,6 +2,7 @@
 beforeEach(() =>{
 })
 it('Dslms', function(){
+
     cy.visit ('http://havard.deltalms.prunedge.org/')
     cy.get(':nth-child(1) > .MuiInputBase-root > .MuiInputBase-input').type('havardhs@mailinator.com')
     cy.get(':nth-child(2) > .MuiInputBase-root > .MuiInputBase-input').type('P@ssw0rd12345')
@@ -9,8 +10,8 @@ it('Dslms', function(){
     cy.contains('Courses').click()
     cy.get('.jss123 > .MuiButtonBase-root > .MuiButton-label').click()
     cy.get('.MuiGrid-grid-lg-4 > .MuiBox-root > .MuiButtonBase-root > .MuiButton-label').click()
-    cy.get('.MuiGrid-container > :nth-child(1) > .MuiFormControl-root > .MuiInputBase-root > .MuiInputBase-input').type('Sociology')
-    cy.get(':nth-child(2) > .MuiFormControl-root > .MuiInputBase-root > .MuiInputBase-input').type('SOCIO-109')
+    cy.get('.MuiGrid-container > :nth-child(1) > .MuiFormControl-root > .MuiInputBase-root > .MuiInputBase-input').type('Physics')
+    cy.get(':nth-child(2) > .MuiFormControl-root > .MuiInputBase-root > .MuiInputBase-input').type('PHYSICS-109')
     cy.get(':nth-child(3) > .MuiFormControl-root > .MuiInputBase-root > .MuiInputBase-input').type('3')
     cy.get('#mui-component-select-faculty').click()
     cy.get('[data-value="206c5a83-2378-4359-94a7-2bada8dfda10"]').click()
@@ -21,4 +22,5 @@ it('Dslms', function(){
     cy.get('#lecturers-autocomplete').click()
     cy.get('#lecturers-autocomplete-option-1').click()
     cy.get('.MuiButton-contained > .MuiButton-label').click()
+    cy.url().should('contain', 'success')
 })

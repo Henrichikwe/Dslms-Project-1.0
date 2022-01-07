@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
-
+beforeEach(() =>{
+})
 it('Dslms', function(){
     cy.visit ('http://havard.deltalms.prunedge.org/')
     cy.get(':nth-child(1) > .MuiInputBase-root > .MuiInputBase-input').type('havardhs@mailinator.com')
