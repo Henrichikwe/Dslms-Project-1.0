@@ -115,21 +115,84 @@ it('Dslms', function(){
    
 })
 
-// course creation by Admin
-it.only('Dslms', function(){
 
+// create Assignemnt (lecturer)
+it('Dslms2', function(){
     cy.visit ('http://havard.deltalms.prunedge.org/')
+    cy.get(':nth-child(1) > .MuiInputBase-root > .MuiInputBase-input').type('angelo@mailinator.com')
+    cy.get(':nth-child(2) > .MuiInputBase-root > .MuiInputBase-input').type('P@ssw0rd12345')
+    cy.get('.MuiButton-label').click()
+    cy.get('[href="/courses"]').click()
+    cy.get(':nth-child(1) > .MuiPaper-root > .MuiCardMedia-root').click()
+    cy.get(':nth-child(4) > .MuiTab-wrapper').click()
+    cy.get('.jss308 > .MuiButtonBase-root > .MuiButton-label > .MuiButton-startIcon > .MuiSvgIcon-root > path').click()
+    cy.get('.jss397 > :nth-child(1) > .MuiInputBase-root > .MuiInputBase-input').type('Project management Assignment 2')
+    cy.get(':nth-child(2) > .MuiInputBase-root > .MuiInputBase-input').type('Waterfall methodology')
+    cy.get('.jss404 > :nth-child(1) > .MuiInputBase-root > .MuiInputBase-input').type('10')
+    cy.get(':nth-child(3) > .MuiInputBase-root > .MuiInputBase-input').type('2022-01-28')
+    cy.get(':nth-child(4) > .MuiInputBase-root > .MuiInputBase-input').type('2022-01-29')
+    cy.get('.header-btns > .MuiButton-contained > .MuiButton-label').click()
+})
+
+it('Dslms2', function(){
+    cy.visit ('http://havard.deltalms.prunedge.org/')
+    cy.get(':nth-child(1) > .MuiInputBase-root > .MuiInputBase-input').type('angelo@mailinator.com')
+    cy.get(':nth-child(2) > .MuiInputBase-root > .MuiInputBase-input').type('P@ssw0rd12345')
+    cy.get('.MuiButton-label').click()
+    cy.get('[href="/courses"]').click()
+    cy.get(':nth-child(1) > .MuiPaper-root > .MuiCardMedia-root').click()
+    cy.get(':nth-child(4) > .MuiTab-wrapper').click()
+    cy.get('.jss356 > :nth-child(1)').click()
+    cy.get('.MuiButton-outlined').click()
+    cy.get(':nth-child(2) > .MuiInputBase-root > .MuiInputBase-input').clear().type('Waterfall Methodology')
+    cy.get('.header-btns > .MuiButton-contained').click()
+
+})
+
+it('Dslms2', function(){
+    cy.visit ('http://havard.deltalms.prunedge.org/')
+    cy.get(':nth-child(1) > .MuiInputBase-root > .MuiInputBase-input').type('angelo@mailinator.com')
+    cy.get(':nth-child(2) > .MuiInputBase-root > .MuiInputBase-input').type('P@ssw0rd12345')
+    cy.get('.MuiButton-label').click()
+    cy.get('[href="/live-session"]').click()
+    cy.get('.MuiGrid-grid-lg-4 > .MuiBox-root > .MuiButtonBase-root').click()
+    cy.get('.MuiGrid-container > :nth-child(1) > .MuiFormControl-root > .MuiInputBase-root > .MuiInputBase-input').type('Boot camp for beginners')
+    //cy.get('.jss336 > [style="margin-right: 20px;"] > .MuiInputBase-root > #date').type("2022-01-28")
+    //cy.get('.jss336 > :nth-child(2) > .MuiInputBase-root > #time').type('11:30')
+    //cy.get('.jss338 > [style="margin-right: 20px;"] > .MuiInputBase-root > #date').type("2022-01-30")
+    //cy.get('.jss338 > :nth-child(2) > .MuiInputBase-root > #time').type('11:50')
+    cy.get('.MuiAutocomplete-popupIndicator > .MuiIconButton-label > .MuiSvgIcon-root').type('Computer Science {enter}')
+    cy.get(':nth-child(6) > .MuiFormControl-root > .MuiInputBase-root > .MuiInputBase-input').type('Webinar')
+    cy.get('.header-btns > .MuiButtonBase-root').click()
+    
+
+})
+
+it('Dslms', function(){
+    cy.visit ('http://havard.deltalms.prunedge.org/')
+    //Assert that the app under test contains the right url.
+    cy.url().should('include','http://havard.deltalms.prunedge.org/')
     cy.get(':nth-child(1) > .MuiInputBase-root > .MuiInputBase-input').type('havardhs@mailinator.com')
     cy.get(':nth-child(2) > .MuiInputBase-root > .MuiInputBase-input').type('P@ssw0rd12345')
     cy.get('.MuiButton-label').click()
-    cy.contains('Courses').click()
-    cy.get('.jss123 > .MuiButtonBase-root > .MuiButton-label').click()
+    cy.get('[href="/users"]').click()
+    cy.get('.jss160').click()
     cy.get('.MuiGrid-grid-lg-4 > .MuiBox-root > .MuiButtonBase-root > .MuiButton-label').click()
-    cy.get('.MuiGrid-container > :nth-child(1) > .MuiFormControl-root > .MuiInputBase-root > .MuiInputBase-input').type('ATOMIC PHYSICS 5')
-    cy.get(':nth-child(2) > .MuiFormControl-root > .MuiInputBase-root > .MuiInputBase-input').type('ATOM-PHY')
-    cy.get(':nth-child(3) > .MuiFormControl-root > .MuiInputBase-root > .MuiInputBase-input').type('3')
-    cy.get('#mui-component-select-faculty').click()
-    cy.get('[data-value="290c6627-483f-45f7-ac93-631097feb409"]').click()
-    cy.get('#mui-component-select-department').click()
-    cy.get('[data-value="aa835d60-688f-4e26-8f88-49d69b3210c5"]').click()
+    cy.get('#tab-1 > .MuiTab-wrapper').click()
+   // cy.get('.file-input-cover-caption').click()
+    //cy.contains('Drop your files here or click here to upload').click()
+    cy.get('.file-input-cover-icon').click()
+})
+
+it.only('Dslms', function(){
+    cy.visit ('http://havard.deltalms.prunedge.org/')
+    //Assert that the app under test contains the right url.
+    cy.url().should('include','http://havard.deltalms.prunedge.org/')
+    cy.get(':nth-child(1) > .MuiInputBase-root > .MuiInputBase-input').type('havardhs@mailinator.com')
+    cy.get(':nth-child(2) > .MuiInputBase-root > .MuiInputBase-input').type('P@ssw0rd12345')
+    cy.get('.MuiButton-label').click()
+    cy.contains('School').click()
+    cy.contains('Edit School').click()
+    cy.get('.MuiButton-label > .MuiPaper-root > .MuiBox-root > .MuiTypography-root').click()
+    cy.get('.MuiButtonBase-root MuiIconButton-root jss2180 MuiCheckbox-root MuiCheckbox-colorPrimary jss2181 Mui-checked MuiIconButton-colorPrimary').click()
 })

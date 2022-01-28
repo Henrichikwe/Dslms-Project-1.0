@@ -1,4 +1,7 @@
 {
     "WatchForFileChanges":false,
-    "defaultCommandTimeout":30000
+    "defaultCommandTimeout":30000,
+    "chromeWebSecurity":false,
+    "waitForAnimation": false,
+    "animationDistanceThreshold":50
 }
