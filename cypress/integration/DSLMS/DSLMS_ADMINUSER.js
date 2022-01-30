@@ -30,7 +30,27 @@ it('should actually be assessible', function(){
     cy.get('#outlined-search').type('Peters')
     cy.url().should('contain', 'http://havard.deltalms.prunedge.org/')
 })
-
+//Edit profile info
+it.only('Dslms', function(){
+    cy.visit ('http://havard.deltalms.prunedge.org/')
+    //Assert that the app under test contains the right url.
+    cy.url().should('include','http://havard.deltalms.prunedge.org/')
+    cy.get(':nth-child(1) > .MuiInputBase-root > .MuiInputBase-input').type('havardhs@mailinator.com')
+    cy.get(':nth-child(2) > .MuiInputBase-root > .MuiInputBase-input').type('P@ssw0rd12345')
+    cy.get('.MuiButton-label').click()
+    cy.get('.MuiIconButton-label > .MuiAvatar-root > .MuiAvatar-img').click()
+    cy.get('.jss59 > :nth-child(3) > :nth-child(1)').click()
+    cy.get('.MuiButton-label').click()
+    cy.get(':nth-child(2) > .MuiInputBase-root > .MuiInputBase-input').type('Mason')
+    cy.get(':nth-child(3) > .MuiInputBase-root > .MuiInputBase-input').type('ilkson')
+    cy.get(':nth-child(4) > .MuiInputBase-root > .MuiInputBase-input').type('09085783388')
+    cy.get(':nth-child(5) > .MuiInputBase-root > .MuiInputBase-input').type('Yul')
+    cy.get(':nth-child(6) > .MuiInputBase-root > .MuiInputBase-input').type('Bahamas')
+    cy.get(':nth-child(9) > .MuiInputBase-root > .MuiInputBase-input').type('New zealand')
+    cy.get(':nth-child(10) > .MuiInputBase-root > .MuiInputBase-input').type('1992-08-12')
+    cy.get('.MuiButton-contained').click()
+    cy.url().should('contain','http://havard.deltalms.prunedge.org/')
+})
 //Edit Admin information
 it.only('Dslms', function(){
     cy.visit ('http://havard.deltalms.prunedge.org/')
